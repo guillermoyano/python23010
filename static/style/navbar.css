@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  background: url(../img/fondo\ psicodelico\ 3.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+main {
+    margin-top: 50px; /* Agrega un margen superior para dar espacio a la navbar */
+    z-index: 1; /* Asegura que la navbar se muestre por encima del contenido */
+  }
+  
+
+nav {
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  
+}
+.linky {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+.linky:before,
+.linky:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  background: #b34608;
+  transition: 0.5s;
+}
+.linky:after {
+  left: 0;
+  bottom: -10px;
+}
+.linky:before {
+  right: 0;
+  top: -10px;
+}
+.linky:hover:after,
+.linky:hover:before {
+  width: 100%;
+}
+#navbar {
+  background: black;
+  backdrop-filter: blur(10px);
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-container {
+  max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0 auto;
+}
+
+.footer-container p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.footer-container p::before,
+.footer-container p::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #b34608;
+  margin: 0 5px;
+}
+
+.footer-container p::before {
+  border-radius: 50%;
+}
+
+.footer-container p::after {
+  border-radius: 5px;
+}
+
+.container {
+    width: 70%;
+    margin: 150px auto 0;
+    position: relative;
+  }
+
+.formol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #1e1e1e;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+.putin {
+  height: 15px;
+  outline: none;
+  border: 2px solid #b34608;
+  background: transparent;
+  padding: 20px 10px;
+  border-radius: 5px;
+  transition: .5s;
+  color: white;
+  font-size: 20px;
+}
+
+.putin:focus {
+  background: rgb(229, 130, 94);
+}
+
+.botonito {
+  width: 100%;
+  color: white;
+  transition: .5s;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  height: 45px;
+  border-radius: 5px;
+  background: #b34608;
+  align-self: flex-end;
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 70%;
+    height: 70%;
+    overflow: auto;
+    background-color: transparent;
+    padding-top: 200px;
+    padding-left: 200px;
+  }
+  
+  .modal-content {
+    background-color: #4ca17e;
+    margin: 5% auto;
+    padding: 10px;
+    border: 1px solid black;
+    width: 50%;
+    text-align: center;
+    border-radius: 40px;
+  }
+  
+  .modal-buttons {
+    margin-top: 20px;
+  }
+  
+  .btn-confirmar,
+  .btn-cancelar {
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+  }
+  
+  .btn-confirmar {
+    background-color: red;
+    color: white;
+  }
+  
+  .btn-cancelar {
+    background-color: gray;
+    color: white;
+  }
+
+

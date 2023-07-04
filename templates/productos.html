@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../static/style/navbar.css">
+    <link rel="stylesheet" href="../static/style/form.css">
+    <link rel="stylesheet" href="../static/style/lista.css">
+
+</head>
+
+<body>
+    <header id="header">
+        
+    </header>
+    
+
+    <main>
+        <div id="app" class="container">
+            <section v-if="error">Lo sentimos se produjo un error</section>
+            <section v-else>
+                <section v-if="cargando">
+
+                </section>
+                <section v-else>
+                    <button class="hache2">
+                        <span class="spunpun">Listado de productos</span>
+                    </button>
+                    <br>
+
+                    <button class="nuevo">
+                        <a href="producto_nuevo.html">Producto Nuevo</a>
+                    </button>
+
+                    <div class="table-wrapper">
+                        <table class="fl-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Imagen</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="producto in productos" class="">
+                                    <td scope="row">{{producto.id}}</td>
+                                    <td>{{producto.nombre}}</td>
+                                    <td>{{producto.precio}}</td>
+                                    <td>{{producto.stock}}</td>
+                                    <td><img width="60" :src="producto.imagen" :alt="producto.nombre"></td>
+                                    <td>
+
+                                        <button class="modificar"> <a
+                                                :href="'producto_editar.html?id='+ producto.id+'&nombre=' +producto.nombre+ '&precio='+producto.precio+'&stock='+producto.stock +  '&imagen='+producto.imagen">Modificar</a>
+                                        </button>
+
+                                        <!-- <button class="eliminar" v-on:click="eliminar(producto.id)"> Eliminar
+                                        </button> -->
+
+
+                                        <button class="eliminar" onclick="openModal()">Eliminar</button>
+
+                                        <!-- Modal -->
+                                        <div id="myModal" class="modal">
+                                            <div class="modal-content">
+                                                <h2>¿Seguro que deseas eliminar el producto?</h2>
+                                                <div class="modal-buttons">
+                                                    <button class="btn-confirmar"
+                                                    v-on:click="eliminar(producto.id)">Eliminar</button>
+                                                    <button class="btn-cancelar"
+                                                        onclick="closeModal()">Cancelar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            <tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>Guillermo R. Moyano. Full Stack Python. Comisión 23010</p>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../static/js/productos.js"></script>
+    <script src="../static/js/modal.js"></script>
+    <script src="../static/js/main.js"></script>
+</body>
+
+</html>
